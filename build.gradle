@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'de.Albtraum'
+version '1.0'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    //Discord Bot Library
+    compile 'net.dv8tion:JDA:4.1.1_167'
+    //JSON Libraries
+    compile 'org.json:json:20180813'
+    compile 'com.google.code.gson:gson:2.8.6'
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+
+}
