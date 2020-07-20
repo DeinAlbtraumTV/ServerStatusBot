@@ -19,7 +19,7 @@ public class CommandServerStatus extends CommandBase{
         try {
             ping = INetUtils.ping(args.getRawArgs());
         } catch (IOException e) {
-            sendMessage(new MessageBuilder(new EmbedBuilder().setDescription("Failed to connect to server. \n The server has to be without http/https, like this: 'www.google.com' not this: 'https://www.google.com' \n Please try again later.").setColor(Color.RED).build()).build(), args.getChannelID());
+            sendMessage(new MessageBuilder(new EmbedBuilder().setDescription("Failed to connect to server. \n The server has to be without http/https, like this: 'www.google.com' not this: 'https://www.google.com' \n Please try again later.").setFooter("Created by DeinAlbtraum#6224 || [GitHub](https://github.com/DeinAlbtraumTV/ServerStatusBot)").setColor(Color.RED).build()).build(), args.getChannelID());
             return true;
         }
 
@@ -33,7 +33,7 @@ public class CommandServerStatus extends CommandBase{
                             .build()
                     , args.getChannelID());
         } else {
-            sendMessage(new MessageBuilder(new EmbedBuilder().setDescription("Failed to connect to server.\n Please try again later.").setColor(Color.RED).build()).build(), args.getChannelID());
+            sendMessage(new MessageBuilder(new EmbedBuilder().setDescription("Failed to connect to server.\n Please try again later.").setFooter("Created by DeinAlbtraum#6224 || [GitHub](https://github.com/DeinAlbtraumTV/ServerStatusBot)").setColor(Color.RED).build()).build(), args.getChannelID());
         }
         return true;
     }

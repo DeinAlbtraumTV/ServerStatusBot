@@ -40,7 +40,7 @@ public class CommandMCServerStatus extends CommandBase{
             JSONObject jsonObject = (JSONObject) parser.parse(result.toString());
 
             if (jsonObject.get("online").equals(false)) {
-                sendMessage(new MessageBuilder(new EmbedBuilder().setDescription("The server with the ip: " + args.getRawArgs() + " is either offline or unreachable.").setColor(new Color(255, 127, 0)).build()).build(), args.getChannelID());
+                sendMessage(new MessageBuilder(new EmbedBuilder().setDescription("The server with the ip: " + args.getRawArgs() + " is either offline or unreachable.").setFooter("Created by DeinAlbtraum#6224 || [GitHub](https://github.com/DeinAlbtraumTV/ServerStatusBot)").setColor(new Color(255, 127, 0)).build()).build(), args.getChannelID());
             } else if (jsonObject.get("online").equals(true)){
                 JSONObject players = (JSONObject) jsonObject.get("players");
                 sendMessage(new MessageBuilder(
@@ -55,12 +55,13 @@ public class CommandMCServerStatus extends CommandBase{
                                                 "Ping: " + INetUtils.ping((String) jsonObject.get("hostname")) + "\n \n " +
                                                 "Players online: " + players.get("online") + "/" + players.get("max")
                                         )
+                                        .setFooter("Created by DeinAlbtraum#6224 || [GitHub](https://github.com/DeinAlbtraumTV/ServerStatusBot)")
                                         .setColor(new Color(255, 127, 0))
                                         .build())
                                 .build()
                                 , args.getChannelID());
             } else {
-                sendMessage(new MessageBuilder(new EmbedBuilder().setDescription("Failed to retrieve the information from the API.\n Please try again later.").setColor(Color.RED).build()).build(), args.getChannelID());
+                sendMessage(new MessageBuilder(new EmbedBuilder().setDescription("Failed to retrieve the information from the API.\n Please try again later.").setFooter("Created by DeinAlbtraum#6224 || [GitHub](https://github.com/DeinAlbtraumTV/ServerStatusBot)").setColor(Color.RED).build()).build(), args.getChannelID());
             }
             return true;
         } catch (Exception e) {
