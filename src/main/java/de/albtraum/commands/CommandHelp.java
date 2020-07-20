@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class CommandHelp extends CommandBase {
     public CommandHelp() {
-        super("help", "Shows an list of all de.albtraum.commands");
+        super("help", "Shows a list of all commands");
     }
 
     @Override
